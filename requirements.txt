@@ -1,0 +1,12 @@
+fastapi 
+uvicorn 
+transformers 
+torch 
+pydantic 
+pytest 
+httpx 
+requests 
+black 
+flake8 
+isort 
+pre-commit 
