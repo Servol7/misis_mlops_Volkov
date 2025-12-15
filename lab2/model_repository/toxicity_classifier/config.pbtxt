@@ -1,0 +1,40 @@
+name: "toxicity_classifier"
+backend: "python"
+max_batch_size: 8
+
+input [
+  {
+    name: "TEXT"
+    data_type: TYPE_STRING
+    dims: [ -1 ]
+  }
+]
+
+output [
+  {
+    name: "LOGITS"
+    data_type: TYPE_FP32
+    dims: [ 2 ]
+  },
+  {
+    name: "PROBABILITIES"
+    data_type: TYPE_FP32
+    dims: [ 2 ]
+  },
+  {
+    name: "PREDICTION"
+    data_type: TYPE_INT32
+    dims: [ 1 ]
+  },
+  {
+    name: "TOXICITY_SCORE"
+    data_type: TYPE_FP32
+    dims: [ 1 ]
+  }
+]
+
+instance_group [
+  {
+    kind: KIND_CPU
+  }
+]
